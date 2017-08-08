@@ -1,0 +1,49 @@
+﻿@using WebApp.CustomHelpers
+@using WebApp.Globalization.Views
+
+@section javascript {
+    <script src="@Url.ContentNoCache("~/Scripts/Pages/DetailsAccount.js")"></script>
+    @Html.RenderGlobalizationMessagesContent(typeof(WebApp.Globalization.Scripts.AccountExtendStrings))
+}
+<div id="page-account-details" class="panel panel-default">
+    <input type="hidden" id="hd-account-id" value="@ViewBag.AccountId"/>
+    <input type="hidden" id="hd-parent-id" value="@ViewBag.ParentId" />
+    <div class="panel-heading">
+        <h4 class="title-account">&nbsp;</h4>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal col-md-12">
+            <div>
+                <div class="form-group row col-md-12">
+                    <label for="txt-id-gestor" class="text-left control-label col-md-3">@AccountStrings.LabelIdAsignatura:</label>
+                    <div class="col-md-9">
+                        <p id="txt-id-gestor" class="form-control-static">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <label for="txt-nombre-estudio" class="text-left control-label col-md-3">@AccountStrings.LabelNombreEstudio:</label>
+                    <div class="col-md-9">
+                        <p id="txt-nombre-estudio" class="form-control-static">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <label class="control-label text-left col-md-4">@AccountStrings.LabelAsignaturasGestor:</label>
+                </div>
+                <div class="form-group row col-md-12">
+                    <ul class="list-group pre-scrollable list-asiganturas"></ul>
+                </div>
+                <div class="form-group row col-md-12">
+                    <label class="control-label text-left col-md-4">@AccountStrings.LabelPeriodoActivos:</label>
+                </div>
+                <div class="form-group row col-md-12">
+                    <ul class="list-group pre-scrollable list-periodos-activos"></ul>
+                </div>
+                <div class="row col-md-6 col-md-offset-3">
+                    <button type="button" id="btn-verificar-datos" class="btn btn-default">@AccountStrings.BtnVerificarDatos</button>
+                    <button type="button" id="btn-generar-periodo" class="btn btn-default">@AccountStrings.BtnGenerarPeriodo</button>
+                    <button type="button" id="btn-volver" class="btn btn-default">@CommonStrings.BtnVolver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

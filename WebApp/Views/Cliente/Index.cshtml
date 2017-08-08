@@ -1,0 +1,59 @@
+﻿@using WebApp.CustomHelpers
+@using WebApp.Globalization.Views
+
+@section javascript {
+    <script src="@Url.ContentNoCache("~/Scripts/Pages/Cliente.js")"></script>
+}
+<div id="page-create-cliente" class="col-md-12">
+    <div class="well">
+        <div class="form-horizontal">
+            <fieldset>
+                <legend>Crear Cliente</legend>
+                <div class="form-group">
+                    <label for="lb-tipo" class="control-label col-md-3">Tipo de Cliente:</label>
+                    <div class="col-md-3">
+                        <p id="lb-tipo" class="form-control-static">jur&iacute;dico</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txt-dni" class="control-label col-md-3">Dni:</label>
+                    <div class="col-md-3">
+                        <input id="txt-dni" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txt-nombre" class="control-label col-md-3">Nombre:</label>
+                    <div class="col-md-3">
+                        <input id="txt-nombre" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txt-apellidos" class="control-label col-md-3">Apellidos:</label>
+                    <div class="col-md-3">
+                        <input id="txt-apellidos" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txt-fecha-nacimiento" class="control-label col-md-3">Fecha de nacimiento:</label>
+                    <div class="col-md-2">
+                        <div id="txt-fecha-nacimiento" class="input-group date date-inicio">
+                            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txt-edad" class="control-label col-md-3">Edad:</label>
+                    <div class="col-md-2">
+                        <input id="txt-edad" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-3">
+                        <button type="button" id="btn-guardar" class="btn btn-default">Guardar</button>
+                        <button type="button" id="btn-cancelar" class="btn btn-default">Cancelar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

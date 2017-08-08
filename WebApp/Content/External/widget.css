@@ -1,0 +1,323 @@
+.jquick-container * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.jquick-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+.jquick-single.jquick-default > span{
+    top: 50%;
+    color:#777777;
+    /*font: normal 11px/23px Arial,Helvetica,sans-serif;*/
+}
+/****************************************************************/
+.jquick-container-active.jquick-with-drop .jquick-single {
+    border: 1px solid #aaa;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-left-radius: 0;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+    background-image: -webkit-linear-gradient(#eeeeee 20%, #ffffff 80%);
+    background-image: -moz-linear-gradient(#eeeeee 20%, #ffffff 80%);
+    background-image: -o-linear-gradient(#eeeeee 20%, #ffffff 80%);
+    background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
+    box-shadow: 0 1px 0 #fff inset;
+}
+.jquick-container-active .jquick-single {
+    border: 1px solid #5897fb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-drop-down-and-tittle{margin-right: 20px; }
+.jquick-container-single .jquick-single {
+  position: relative;
++  display: block;
+  overflow: hidden;
+  padding: 0 0 0 8px;
+  height: 25px;
+  border: 1px solid #aaa;
+  border-radius: 4px 0px 0px 4px;
+  background-color: #fff;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+  background: -webkit-linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -moz-linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -o-linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+}
+.jquick-container a {
+    cursor: pointer;
+}
+
+/****************************************************************/
+.jquick-container-active.jquick-with-drop .jquick-single div {
+    border-left: none;
+    background: transparent;
+}
+.jquick-container-single .jquick-single div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 18px;
+    height: 100%;
+}
+.jquick-container-single .jquick-single div b.jquick-info {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(jquick-sprite.png) no-repeat 0px 10px;
+}
+.jquick-container-active.jquick-with-drop .jquick-single div b.jquick-info {
+    background-position: 0px -5px;
+}
+
+/****************************************************************/
+.jquick-container-single .jquick-single span {
+    display: block;
+    overflow: hidden;
+    margin-right: 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.container-drop-down-and-tittle div.jquick-single span{
+    cursor: default;
+}
+.jquick-container-single .jquick-single-with-deselect span {
+    margin-right: 38px;
+}
+
+.jquick-container-single .jquick-single abbr:hover {
+  background-position: 0px -61px;
+  cursor: pointer;
+}
+.jquick-container-single.jquick-disabled .jquick-single abbr:hover {
+  background-position: 0px -61px;
+}
+/****************************************************************/
+.jquick-container-single .jquick-single abbr {
+    position: absolute;
+    top: 6px;
+    right: 26px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(jquick-sprite.png) 0px -43px no-repeat;
+    font-size: 1px;
+}
+/****************************************************************/
+
+.jquick-container-single .jquick-search {
+    z-index: 1010;
+    margin: 0;
+    padding: 3px 4px;
+    white-space: nowrap;
+}
+.jquick-container-single .jquick-search input[type="text"] {
+    margin: 1px 0;
+    padding: 4px 20px 4px 5px;
+    width: 100%;
+    height: auto;
+    outline: 0;
+    border: 1px solid #aaa;
+    background: url(jquick-sprite.png) no-repeat 100% -75px;
+    font-size: 1em;
+    font-family: sans-serif;
+    line-height: normal;
+    border-radius: 0;
+}
+
+.jquick-container-single .jquick-search.jquick-loading input[type="text"]{
+  background: url(loading-control.gif) no-repeat;
+  background-position: 99% 4px;
+}
+
+/****************************************************************/
+
+.jquick-container.jquick-with-drop .jquick-drop {
+    left: 0;
+}
+.jquick-container-single .jquick-drop {
+    margin-top: -1px;
+    border-radius: 0 0 4px 4px;
+    background-clip: padding-box;
+}
+.jquick-container .jquick-drop {
+    position: absolute;
+    top: 24px;
+    left: -9999px;
+    z-index: 1010;
+    margin-right: 20px;
+    border: 1px solid #aaa;
+    border-top: 0;
+    background: #fff;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    width: calc(100% - 20px);
+}
+/*****************************************************************/
+.jquick-container .jquick-results {
+    color: #444;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 4px 4px 0;
+    padding: 0 0 0 4px;
+    max-height: 240px;
+    -webkit-overflow-scrolling: touch;
+}
+.jquick-container .jquick-results li.active-result {
+    display: list-item;
+    cursor: pointer;
+}
+.jquick-container .jquick-results li {
+    display: none;
+    margin: 0;
+    padding: 5px 6px;
+    list-style: none;
+    line-height: 15px;
+    word-wrap: break-word;
+    -webkit-touch-callout: none;
+}
+.jquick-container ul li {
+    list-style: disc;
+    margin-left: 1em;
+    margin-bottom: 1.25em;
+}
+.jquick-container li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.jquick-container .jquick-results li.active-result:hover {
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+}
+/*****************************************************************/
+.jquick-container a.jquick-toolbar {
+    display: inline-block;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    left: auto;
+    top: 0px;
+    border: 1px solid #aaa;
+    right: 0px;
+    height: 25px;
+    box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 4px 4px 0px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccccc+1,ffffff+100 */
+    background: #cccccc ; /* Old browsers */
+    background: url(jquick-sprite.png) no-repeat 100% -20px, -moz-linear-gradient(top,  #cccccc 1%, #ffffff 100%); /* FF3.6-15 */
+    background: url(jquick-sprite.png) no-repeat 100% -20px,  -webkit-linear-gradient(top,  #cccccc 1%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: url(jquick-sprite.png) no-repeat 100% -20px, linear-gradient(to bottom left,  #cccccc 1%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+.jquick-container a.jquick-toolbar.toolbar-bottom{
+    border-radius: 0px 4px 0px 0px;
+}
+.jquick-container a.jquick-toolbar.toolbar-right{
+    border-radius: 0px;
+}
+
+div.jquick-box-toolbar {
+    position: absolute;
+    background-color: red;
+    border: 1px solid #aaa;
+    opacity: 0.9;
+    z-index: 1010;
+    background: #cccccc ; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cccccc 1%, #ffffff 95%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #cccccc 1%,#ffffff 95%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to left top,  #cccccc 1%,#ffffff 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */    
+}
+
+div.toolbar-bottom.jquick-box-toolbar ul li {
+    width: 100%;
+    padding: 10px 0px;
+    display: list-item;
+    cursor: pointer;
+    list-style: none; 
+    margin:2px 0px 2px 0px;
+} 
+div.toolbar-bottom.jquick-box-toolbar{
+    width: 20px;
+    left: auto;
+    right: 0;
+    top: 25px;
+    border-radius: 0px 0px 4px 4px;
+}
+div.toolbar-right.jquick-box-toolbar{
+    border-radius: 0px 4px 4px 0px;
+    position: absolute;
+    top:0; 
+    right:-40px; 
+    height: 25px;
+}
+
+div.jquick-box-toolbar ul.toolbar-items li{
+    position: static !important;
+}
+
+div.toolbar-right.jquick-box-toolbar ul.toolbar-items{
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+    clear:both;
+}
+
+div.toolbar-right.jquick-box-toolbar ul li {
+    padding: 10px 0px;
+    display: list-item;
+    cursor: pointer;
+    list-style: none; 
+    margin:2px 0px 2px 0px;
+
+    width:18px;
+    height: 18px;
+    float: left; 
+} 
+
+div.toolbar-right.jquick-box-toolbar ul li.toolbar-copy {
+  background: url(jquick-sprite.png) 5px -95px no-repeat;
+}
+div.toolbar-right.jquick-box-toolbar ul li.toolbar-search {
+  background: url(jquick-sprite.png) 5px -157px no-repeat;
+}
+div.toolbar-right.jquick-box-toolbar ul li.toolbar-edit {
+  background: url(jquick-sprite.png) 7px -115px no-repeat;
+}
+div.toolbar-right.jquick-box-toolbar ul li.toolbar-add {
+  background: url(jquick-sprite.png) 7px -137px no-repeat;
+}
+
+
+div.toolbar-bottom.jquick-box-toolbar ul li.toolbar-copy {
+  background: url(jquick-sprite.png) 5px -95px no-repeat;
+}
+div.toolbar-bottom.jquick-box-toolbar ul li.toolbar-search {
+  background: url(jquick-sprite.png) 5px -155px no-repeat;
+}
+div.toolbar-bottom.jquick-box-toolbar ul li.toolbar-edit {
+  background: url(jquick-sprite.png) 5px -114px no-repeat;
+}
+div.toolbar-bottom.jquick-box-toolbar ul li.toolbar-add {
+  background: url(jquick-sprite.png) 5px -136px no-repeat;
+}

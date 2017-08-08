@@ -1,0 +1,54 @@
+﻿@using WebApp.Globalization.Views
+@{
+    Layout = null;
+}
+<div id="page-popup-table-migration">
+    <div class="form-group">
+        <div class="box-agrupador">
+            <span class="titulo-agrupador">Cursos</span>
+            <table id="tb-cursos" class="table">
+                <thead>
+                <tr>
+                    <th>@ResultMigrationStrings.LabelId</th>
+                    <th>@ResultMigrationStrings.LabelNombre</th>
+                    <th>@ResultMigrationStrings.LabelSISID</th>
+                    <th>@ResultMigrationStrings.LabelInfo</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="box-agrupador">
+            <span class="titulo-agrupador">Estudiantes</span>
+            <table id="tb-alumnos" class="table">
+                <thead>
+                    <tr>
+                        <th>@ResultMigrationStrings.LabelId</th>
+                        <th>@ResultMigrationStrings.LabelNombre</th>
+                        <th>@ResultMigrationStrings.LabelApellidos</th>
+                        <th>@ResultMigrationStrings.LabelNif</th>
+                        <th>@ResultMigrationStrings.LabelInfo</th>
+                    </tr>
+                </thead>                
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="box-agrupador">
+            <span class="titulo-agrupador">Tareas</span>
+            <table id="tb-tareas" class="table">
+                <thead>
+                    <tr>
+                        <th>@ResultMigrationStrings.LabelId</th>
+                        <th>@ResultMigrationStrings.LabelNombre</th>
+                        <th>@ResultMigrationStrings.LabelInfo</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

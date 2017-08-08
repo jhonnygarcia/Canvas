@@ -1,0 +1,21 @@
+﻿@using WebApp.Globalization.Views
+<style>
+    .mensaje-error {
+        position: relative;
+        color: #a94442;
+        border-color: #ebccd1;
+        background-color: #f2dede;
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        margin-top: 20px;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+    }
+</style>
+<div class="jumbotron">
+    <div class="bs-callout bs-callout-danger">
+         <h2>@CommonStrings.TitleApplication</h2>
+        <p>@Html.Raw(Model ?? CommonStrings.ErrorValidacionLTI)</p>
+    </div>
+</div>

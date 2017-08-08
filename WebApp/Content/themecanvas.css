@@ -1,0 +1,151 @@
+﻿@font-face {
+    font-family: 'LatoWeb';
+    src: url(fonts/LatoLatin-Regular.woff2);
+    font-style: normal;
+    font-weight: normal
+}
+@font-face {
+    font-family: 'LatoWeb';
+    src: url(fonts/LatoLatin-Italic.woff2);
+    font-style: italic;
+    font-weight: normal
+}
+@font-face {
+    font-family: 'LatoWeb';
+    src: url(fonts/LatoLatin-Bold.woff2);
+    font-style: normal;
+    font-weight: bold
+}
+@font-face {
+    font-family: 'LatoWeb';
+    src: url(fonts/LatoLatin-Light.woff2);
+    font-style: normal;
+    font-weight: 300
+}
+
+
+ul li > span.badge {
+    background-color:#f5f5f5;
+    border-color: #C7CDD1 !important;
+    color: #2D3B45 !important;
+    border: 1px solid;
+    font-size:14px !important;
+    background: #f5f5f5;
+    font-weight: normal !important;
+    border-radius:3px;
+    font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    font-style: normal !important;
+}
+ul li > span.badge:hover{
+    background: #e8e8e8 !important;
+}
+button.btn.btn-defaults {
+    background: #f5f5f5;
+    color: #2D3B45;
+    border: 1px solid;
+    border-color: #C7CDD1;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    text-shadow: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.box-buttons {
+    margin-bottom: 10px;
+}
+button.btn.btn-default:hover {
+    background: #e8e8e8;
+}
+button.btn.btn-default:active {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+.page-accounts-arbol .panel-heading {
+    font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;    
+}
+div.panel-default > div.panel-heading {
+  color: #fff;
+  background-color: #1b577e;
+}
+.text-sis-id{
+  font-size:10px;
+}
+.panel.panel-default .panel-heading h4 {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+div.container-full.container {
+    margin-top: -4px;
+}
+:not(.glyphicon){
+  font-family: "LatoWeb", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.bs-callout-danger {
+    border-left-color: #ce4844 !important;
+}
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+fieldset legend {
+    color: #003658;
+    font-weight: bold;
+}
+nav.navbar.navbar-default.navbar-fixed-top {
+    background-color: #1b577e;
+}
+div.navbar-header a.navbar-brand,
+div.navbar-header a.navbar-brand:focus,
+div.navbar-header a.navbar-brand:hover{
+    color: #ffffff;
+}
+ul.nav.navbar-nav > li > a,
+ul.nav.navbar-nav > li > a:focus,
+ul.nav.navbar-nav > li > a:hover{
+    color: #ffffff;
+}
+ul.nav.navbar-nav > li.active > a,
+ul.nav.navbar-nav > li.active > a:focus,
+ul.nav.navbar-nav > li.active > a:hover{
+    color: #ffffff;
+    background-color: #003658;
+}
+table.dataTable thead tr th.sorting_desc,
+table.dataTable thead tr th.sorting,
+table.dataTable thead tr th.sorting_asc,
+.ui-state-default {
+    background-color: #0f5785;
+    color: #ffffff;
+}
+ul.pagination li.paginate_button a {
+    background-color: #0f5785;
+    color: #ffffff;
+}
+ul.pagination li.paginate_button.active a,
+ul.pagination li.paginate_button.disabled a {
+    background-color: #0f5785;
+    opacity: .35;
+	filter:Alpha(Opacity=35); /* support: IE8 */
+	background-image: none;
+}
+ul.pagination li.paginate_button.active a:hover,
+ul.pagination li.paginate_button a:hover {
+    background-color: #003658;
+}

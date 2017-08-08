@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorAccountNoSisId" xml:space="preserve">
+    <value>La cuenta no tiene un SIS-ID definido</value>
+  </data>
+  <data name="ErrorAccountPeriodoSisIdCorrupto" xml:space="preserve">
+    <value>El SIS-ID de la cuenta no es el mismo que el IdEstudio e IdPeriodoMatriculacion con la que se creo</value>
+  </data>
+  <data name="ErrorAsignaturaNoEstudioPeriodoActivo" xml:space="preserve">
+    <value>La asignatura asociada al curso no pertenece a las asignaturas en el Estudio y Periodo de Matriculación de la cuenta seleccionada</value>
+  </data>
+  <data name="ErrorAsignaturasDiferentes" xml:space="preserve">
+    <value>Las asignaturas sincronizadas inicialmente difieren de las asignaturas del estudio en el Gestor</value>
+  </data>
+  <data name="ErrorAsignaturaSinCursos" xml:space="preserve">
+    <value>La asignatura asociada al curso en canvas no tiene grupos</value>
+  </data>
+  <data name="ErrorCantidadAsignaturasDiferentes" xml:space="preserve">
+    <value>El número de asignaturas sincronizadas inicialmente es diferente del número de asignaturas del estudio en el Gestor</value>
+  </data>
+  <data name="ErrorCantidadPeriodoActivosDiferentes" xml:space="preserve">
+    <value>El número de periodos activos sincronizados inicialmente es diferente del número de periodos activos del estudio en el Gestor</value>
+  </data>
+  <data name="ErrorCourseNoAccount" xml:space="preserve">
+    <value>El curso enviado no pertenece a la cuenta</value>
+  </data>
+  <data name="ErrorCourseNoSisId" xml:space="preserve">
+    <value>El curso no tiene un SIS-ID definido</value>
+  </data>
+  <data name="ErrorCourseNotSisId" xml:space="preserve">
+    <value>La cuenta tiene algún curso sin un SIS-ID definido</value>
+  </data>
+  <data name="ErrorCoursePublish" xml:space="preserve">
+    <value>La cuenta tiene algun curso en estado publicado</value>
+  </data>
+  <data name="ErrorCourseSisIdNoAsignatura" xml:space="preserve">
+    <value>Existe un curso con un SIS-ID asociado a una asignatura que ya no pertenece al estudio del Gestor</value>
+  </data>
+  <data name="ErrorCursoPublicadoNoMigrate" xml:space="preserve">
+    <value>No puede realizar la operación ya que existe un curso en estado 'Publicado'</value>
+  </data>
+  <data name="ErrorCursosSinFechaConfigurada" xml:space="preserve">
+    <value>No se puede realizar la migración, ya que existe el curso {0} con las fechas no configuradas</value>
+  </data>
+  <data name="ErrorEstudioNoExiste" xml:space="preserve">
+    <value>El SIS-ID asociado a la cuenta no pertenece a un Estudio en el Gestor</value>
+  </data>
+  <data name="ErrorFechasNoPeriodoActivo" xml:space="preserve">
+    <value>Las fechas de periodos no lectivos están fuera del rando del inicio y fin del periodo de matriculación</value>
+  </data>
+  <data name="ErrorFechasSobrePuestas" xml:space="preserve">
+    <value>Las fechas están sobre puestas</value>
+  </data>
+  <data name="ErrorNoAsignaturasWsPorEstudioPeriodoActivo" xml:space="preserve">
+    <value>No hay datos para el estudio y periodo de matriculación solicitados</value>
+  </data>
+  <data name="ErrorNoExisteAccountExtend" xml:space="preserve">
+    <value>La cuenta con ID {0} no cuenta con ningún valor extendido</value>
+  </data>
+  <data name="ErrorNoExisteCourseExtend" xml:space="preserve">
+    <value>El curso con ID {0} no cuenta con ningún valor extendido</value>
+  </data>
+  <data name="ErrorNoExistsAccountPeriodo" xml:space="preserve">
+    <value>No existe la cuenta periodo generado con dicho account-id '{0}'</value>
+  </data>
+  <data name="ErrorPeriodoActivosDiferentes" xml:space="preserve">
+    <value>Los periodos activos  sincronizados inicialmente difieren de los periodos activos del estudio en el Gestor</value>
+  </data>
+  <data name="ErrorSisIdAccountCambiado" xml:space="preserve">
+    <value>El SIS-ID asociado a la cuenta es diferente al estudio asociado inicialmente</value>
+  </data>
+  <data name="ErrorSisIdCourseCambiado" xml:space="preserve">
+    <value>El SIS-ID asociado al curso '{0}' es diferente a la asignatura asociada inicialmente</value>
+  </data>
+  <data name="ErrorTareaDeleteCoursesAccount" xml:space="preserve">
+    <value>No se pudo realizar la eliminación de los cursos de la cuenta {0}</value>
+  </data>
+  <data name="ErrorGrupoFechaFinMenorFechaInicio" xml:space="preserve">
+    <value>La asignatura asociada al curso en canvas tiene algún grupo con una fecha de inicio mayor a una fecha de fin definida en el grupo</value>
+  </data>
+  <data name="ErrorGruposSinFechaFin" xml:space="preserve">
+    <value>La asignatura asociada al curso en canvas tiene algún grupo sin una fecha de fin definida</value>
+  </data>
+  <data name="ErrorGruposSinFechaInicio" xml:space="preserve">
+    <value>La asignatura asociada al curso en canvas tiene algún grupo sin una fecha de inicio definida </value>
+  </data>
+  <data name="ErrorCursoConSisIdFaild" xml:space="preserve">
+    <value>El curso '{0}' tiene asociado un SIS-ID que no pertece a las asignaturas del estudio '{1}'</value>
+  </data>
+</root>

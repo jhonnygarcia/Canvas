@@ -1,0 +1,26 @@
+﻿@using WebApp.CustomHelpers
+@using WebApp.Globalization.Views
+
+@section stylesheet {
+    <link href="@Url.ContentCache("~/Content/External/bootstrap-treeview.min.css")" rel="stylesheet" type="text/css"/>
+}
+@section javascript {
+    <script src="@Url.ContentCache("~/Scripts/External/bootstrap-treeview.min.js")"></script>
+    <script src="@Url.ContentNoCache("~/Scripts/Pages/Account.js")"></script>
+    @Html.RenderGlobalizationMessagesContent(typeof(WebApp.Globalization.Scripts.AccountStrings))
+}
+<div class="page-accounts-arbol panel panel-default">
+    <input type="hidden" id="hd-account-id" value="@ViewBag.AccountId"/>
+    <div class="panel-heading">
+        <h4>@AccountStrings.TitleAccount</h4>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="tree-account-courses" class="treeview"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

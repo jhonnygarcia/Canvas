@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5ED17FA-ECDC-4844-86EC-E421DD0FFCC6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44338</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.1\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LtiLibrary.AspNet, Version=1.6.6154.21256, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LtiLibrary.AspNet.1.6.2\lib\net45\LtiLibrary.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LtiLibrary.Core, Version=1.6.6154.21256, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LtiLibrary.Core.1.6.2\lib\net45\LtiLibrary.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.3.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.3.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.3.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.3.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.3.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.3.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataCacheServices\DataCacheServices.csproj">
+      <Project>{d89e5e37-6f2d-4979-a7cc-10112a623f25}</Project>
+      <Name>DataCacheServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiControllers\ClienteController.cs" />
+    <Compile Include="ApiControllers\CanvasExtendController.cs" />
+    <Compile Include="ApiControllers\GestorController.cs" />
+    <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\ExceptionHandlingAttribute.cs" />
+    <Compile Include="App_Start\GlobalValues.cs" />
+    <Compile Include="App_Start\IocContainer.cs" />
+    <Compile Include="Architecture\ApiControllers\ApiControllerBase.cs" />
+    <Compile Include="Architecture\ApiControllers\HttpCommonResultContent.cs" />
+    <Compile Include="Architecture\ApiControllers\HttpWithMessageResult.cs" />
+    <Compile Include="Architecture\IJobService.cs" />
+    <Compile Include="Architecture\JobService.cs" />
+    <Compile Include="Architecture\Parameters\BaseListParameters.cs" />
+    <Compile Include="Architecture\Parameters\DeletedParameters.cs" />
+    <Compile Include="Architecture\Parameters\GetActionParameters.cs" />
+    <Compile Include="Architecture\Parameters\SimpleItem.cs" />
+    <Compile Include="Architecture\Parameters\SimpleListParameters.cs" />
+    <Compile Include="Architecture\TransferStructs\BaseResult.cs" />
+    <Compile Include="Architecture\TransferStructs\ClientTransfer.cs" />
+    <Compile Include="Architecture\TransferStructs\InfoPagination.cs" />
+    <Compile Include="Architecture\TransferStructs\ResultList.cs" />
+    <Compile Include="Architecture\TransferStructs\ResultValue.cs" />
+    <Compile Include="Bundles\BundlesConfig.cs" />
+    <Compile Include="Bundles\Layout\LayoutBundle.cs" />
+    <Compile Include="Common\ReturnsCanvas\EnrollmentCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\UserCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\AssignmentCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\SisImportCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\SectionCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\ProgressCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\MigrationCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\CourseCanvasDto.cs" />
+    <Compile Include="Common\ReturnsCanvas\AccountCanvasDto.cs" />
+    <Compile Include="Common\WepApi\Impl\UsersApiCanvas.cs" />
+    <Compile Include="Common\WepApi\IProgressApiCanvas.cs" />
+    <Compile Include="Common\WepApi\ICoursesApiCanvas.cs" />
+    <Compile Include="Common\WepApi\IAccountsApiCanvas.cs" />
+    <Compile Include="Common\WepApi\Impl\ProgressApiCanvas.cs" />
+    <Compile Include="Common\WepApi\Impl\CoursesApiCanvas.cs" />
+    <Compile Include="Common\WepApi\Impl\BaseApiCanvas.cs" />
+    <Compile Include="Common\WepApi\Impl\AccountsApiCanvas.cs" />
+    <Compile Include="Common\WepApi\IUsersApiCanvas.cs" />
+    <Compile Include="Common\Wsdl\Estudios.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClienteController .cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ApiControllers\CanvasController.cs" />
+    <Compile Include="CustomHelpers\HtmlExtensions.cs" />
+    <Compile Include="CustomHelpers\UrlHelpers.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Globalization\Scripts\MigrationResultStrings.Designer.cs">
+      <DependentUpon>MigrationResultStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Scripts\DetailsCourseStrings.Designer.cs">
+      <DependentUpon>DetailsCourseStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Views\AccountPeriodoStrings.Designer.cs">
+      <DependentUpon>AccountPeriodoStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Scripts\AccountStrings.Designer.cs">
+      <DependentUpon>AccountStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Scripts\AccountExtendStrings.Designer.cs">
+      <DependentUpon>AccountExtendStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Scripts\CommonStrings.Designer.cs">
+      <DependentUpon>CommonStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Scripts\ScriptTemplates.Designer.cs">
+      <DependentUpon>ScriptTemplates.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Services\CanvasExtedStrings.Designer.cs">
+      <DependentUpon>CanvasExtedStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Services\GestorWsStrings.Designer.cs">
+      <DependentUpon>GestorWsStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Services\CanvasApiStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CanvasApiStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Globalization\Views\ResultMigrationStrings.Designer.cs">
+      <DependentUpon>ResultMigrationStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Views\CourseStrings.Designer.cs">
+      <DependentUpon>CourseStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Views\CommonStrings.Designer.cs">
+      <DependentUpon>CommonStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Globalization\Views\AccountStrings.Designer.cs">
+      <DependentUpon>AccountStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Migrations\201705231446548_recreate_tables.cs" />
+    <Compile Include="Migrations\201705231446548_recreate_tables.Designer.cs">
+      <DependentUpon>201705231446548_recreate_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705291314054_add_table_accountgenerates.cs" />
+    <Compile Include="Migrations\201705291314054_add_table_accountgenerates.Designer.cs">
+      <DependentUpon>201705291314054_add_table_accountgenerates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705301314301_add_columns_AccountsGenerate.cs" />
+    <Compile Include="Migrations\201705301314301_add_columns_AccountsGenerate.Designer.cs">
+      <DependentUpon>201705301314301_add_columns_AccountsGenerate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311442386_add_table_log.cs" />
+    <Compile Include="Migrations\201705311442386_add_table_log.Designer.cs">
+      <DependentUpon>201705311442386_add_table_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706011947203_add_table_periodoNoLectivo.cs" />
+    <Compile Include="Migrations\201706011947203_add_table_periodoNoLectivo.Designer.cs">
+      <DependentUpon>201706011947203_add_table_periodoNoLectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706072107342_add_table_courseGenerates.cs" />
+    <Compile Include="Migrations\201706072107342_add_table_courseGenerates.Designer.cs">
+      <DependentUpon>201706072107342_add_table_courseGenerates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706141551056_add_table_progressInfo.cs" />
+    <Compile Include="Migrations\201706141551056_add_table_progressInfo.Designer.cs">
+      <DependentUpon>201706141551056_add_table_progressInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706261645172_add_table_migration_canvas.cs" />
+    <Compile Include="Migrations\201706261645172_add_table_migration_canvas.Designer.cs">
+      <DependentUpon>201706261645172_add_table_migration_canvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Dto\MigrationToCanvasDto.cs" />
+    <Compile Include="Models\Dto\MotivoDto.cs" />
+    <Compile Include="Models\Dto\ResultMigrationDto.cs" />
+    <Compile Include="Models\Dto\AccountExtendDto.cs" />
+    <Compile Include="Models\Dto\AccountGenerateDto.cs" />
+    <Compile Include="Models\Dto\AsignaturaDto.cs" />
+    <Compile Include="Models\Dto\CourseExtendDto.cs" />
+    <Compile Include="Models\Dto\EstudioDto.cs" />
+    <Compile Include="Models\Dto\LogDto.cs" />
+    <Compile Include="Models\Dto\PeriodoActivoDto.cs" />
+    <Compile Include="Models\Dto\PeriodoNoLectivoDto.cs" />
+    <Compile Include="Models\Dto\ProgressInfoDto.cs" />
+    <Compile Include="Models\Model\CanvasExtendMapping.cs" />
+    <Compile Include="Models\Model\CanvasExtendContenxt.cs" />
+    <Compile Include="Models\Model\Entity\MigrationToCanvas.cs" />
+    <Compile Include="Models\Model\Entity\CourseGenerate.cs" />
+    <Compile Include="Models\Model\Entity\AccountGenerate.cs" />
+    <Compile Include="Models\Model\Entity\CourseExtend.cs" />
+    <Compile Include="Models\Model\Entity\ProgressInfo.cs" />
+    <Compile Include="Models\Model\Entity\Log.cs" />
+    <Compile Include="Models\Model\Entity\Estudio.cs" />
+    <Compile Include="Models\Model\Entity\PeriodoNoLectivo.cs" />
+    <Compile Include="Models\Model\Entity\PeriodoActivo.cs" />
+    <Compile Include="Models\Model\Entity\Asignatura.cs" />
+    <Compile Include="Models\Model\Entity\AccountExtend.cs" />
+    <Compile Include="Models\Services\ICanvasExtendAppServices.cs" />
+    <Compile Include="Models\Services\ILogAppServices.cs" />
+    <Compile Include="Models\Services\IGestorAppServices.cs" />
+    <Compile Include="Models\Services\ICanvasAppServices.cs" />
+    <Compile Include="Models\Services\Impl\GestorAppServices.cs" />
+    <Compile Include="Models\Services\Impl\CanvasAppServices.cs" />
+    <Compile Include="Models\Services\Impl\CanvasExtendAppServices.cs" />
+    <Compile Include="Models\Services\Impl\LogAppServices.cs" />
+    <Compile Include="Parameters\ClienteSearchParameters.cs" />
+    <Compile Include="Parameters\MigrateCoursesParameters.cs" />
+    <Compile Include="Parameters\PeriodoNoLectivosSaveParameters.cs" />
+    <Compile Include="Parameters\CourseSaveParameters.cs" />
+    <Compile Include="Parameters\AccountSaveParameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\External\bootstrap-datepicker.min.css" />
+    <Content Include="Content\External\bootstrap-timepicker.css" />
+    <Content Include="Content\External\bootstrap-treeview.min.css" />
+    <Content Include="Content\External\bootstrap.css" />
+    <Content Include="Content\External\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\External\dataTables.responsive.min.js" />
+    <Content Include="Content\External\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Content\External\jquick-sprite.png" />
+    <Content Include="Content\External\loading-control.gif" />
+    <Content Include="Content\External\responsive.bootstrap.min.css" />
+    <Content Include="Content\External\widget.css" />
+    <Content Include="Content\themecanvas.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\fonts\LatoLatin-Regular.woff2" />
+    <Content Include="Content\fonts\LatoLatin-Italic.woff2" />
+    <Content Include="Content\fonts\LatoLatin-Bold.woff2" />
+    <Content Include="Content\fonts\LatoLatin-Light.woff2" />
+    <None Include="Properties\PublishProfiles\Pre.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Produccion.pubxml" />
+    <None Include="Resources\GlobalizationScript.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\External\bootstrap-datepicker.es.min.js" />
+    <Content Include="Scripts\External\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\External\bootstrap-timepicker.js" />
+    <Content Include="Scripts\External\bootstrap-treeview.min.js" />
+    <Content Include="Scripts\External\bootstrap.js" />
+    <Content Include="Scripts\External\clipboard.min.js" />
+    <Content Include="Scripts\External\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\External\jquery-ui.min.js" />
+    <Content Include="Scripts\External\jquery.blockUI.js" />
+    <Content Include="Scripts\External\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Scripts\External\jquery.dataTables.min.js" />
+    <Content Include="Scripts\External\jquery.js" />
+    <Content Include="Scripts\External\jquery.textchange.min.js" />
+    <Content Include="Scripts\External\moment.js" />
+    <Content Include="Scripts\External\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\External\widget.js" />
+    <Content Include="Scripts\globalization\moment_es.js" />
+    <Content Include="Scripts\globalization\cldrjs\cldr.js" />
+    <Content Include="Scripts\globalization\cldrjs\cldr\event.js" />
+    <Content Include="Scripts\globalization\cldrjs\cldr\supplemental.js" />
+    <Content Include="Scripts\globalization\cldrjs\cldr\unresolved.js" />
+    <Content Include="Scripts\globalization\cldrjs\node_main.js" />
+    <Content Include="Scripts\globalization\globalize\globalize.js" />
+    <Content Include="Scripts\globalization\globalize\globalize\currency.js" />
+    <Content Include="Scripts\globalization\globalize\globalize\date.js" />
+    <Content Include="Scripts\globalization\globalize\globalize\message.js" />
+    <Content Include="Scripts\globalization\globalize\globalize\number.js" />
+    <Content Include="Scripts\globalization\globalize\globalize\plural.js" />
+    <Content Include="Scripts\globalization\globalize\globalize\relative-time.js" />
+    <Content Include="Scripts\globalization\globalize\node-main.js" />
+    <Content Include="Scripts\globalization\legacy.js" />
+    <Content Include="Scripts\Pages\TimePicker.js" />
+    <Content Include="Scripts\Pages\Cliente.js" />
+    <Content Include="Scripts\Pages\DetailsAccountPeriodo.js" />
+    <Content Include="Scripts\Pages\DetailsCourse.js" />
+    <Content Include="Scripts\Pages\DetailsAccount.js" />
+    <Content Include="Scripts\Pages\Account.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\PopupAsociarAsignatura.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Account\PopupGenerarPeriodo.cshtml" />
+    <Content Include="Views\Account\DetailsPeriodo.cshtml" />
+    <Content Include="Scripts\External\web.config" />
+    <Content Include="Scripts\globalization\web.config" />
+    <Content Include="Views\Authentication\Error.cshtml" />
+    <Content Include="Views\Account\PopupTableMigration.cshtml" />
+    <Content Include="Views\Account\PopupAccountPeriodo.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\List.cshtml" />
+    <None Include="Web.Pre.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Pro.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\PopupAsociarEstudio.cshtml" />
+    <Content Include="Views\Shared\_LayoutBack.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globalization\Scripts\MigrationResultStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MigrationResultStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Scripts\DetailsCourseStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DetailsCourseStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Views\AccountPeriodoStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountPeriodoStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Scripts\AccountStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Scripts\AccountExtendStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountExtendStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Scripts\CommonStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Scripts\ScriptTemplates.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ScriptTemplates.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Services\CanvasExtedStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CanvasExtedStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Services\GestorWsStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GestorWsStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Services\CanvasApiStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CanvasApiStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Views\ResultMigrationStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResultMigrationStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Views\CourseStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CourseStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Views\CommonStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Globalization\Views\AccountStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231446548_recreate_tables.resx">
+      <DependentUpon>201705231446548_recreate_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705291314054_add_table_accountgenerates.resx">
+      <DependentUpon>201705291314054_add_table_accountgenerates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705301314301_add_columns_AccountsGenerate.resx">
+      <DependentUpon>201705301314301_add_columns_AccountsGenerate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311442386_add_table_log.resx">
+      <DependentUpon>201705311442386_add_table_log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011947203_add_table_periodoNoLectivo.resx">
+      <DependentUpon>201706011947203_add_table_periodoNoLectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706072107342_add_table_courseGenerates.resx">
+      <DependentUpon>201706072107342_add_table_courseGenerates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706141551056_add_table_progressInfo.resx">
+      <DependentUpon>201706141551056_add_table_progressInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706261645172_add_table_migration_canvas.resx">
+      <DependentUpon>201706261645172_add_table_migration_canvas.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pre|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pro|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18937</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44338/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

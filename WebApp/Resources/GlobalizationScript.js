@@ -1,0 +1,1 @@
+﻿Globalize.addCultureInfo('{#CURRENT_CULTURE#}',{messages:{{#MESSAGES#}}});

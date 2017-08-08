@@ -1,0 +1,122 @@
+﻿@using WebApp.CustomHelpers
+@using WebApp.Globalization.Views
+
+@section javascript {
+    <script src="@Url.ContentNoCache("~/Scripts/Pages/Cliente.js")"></script>
+}
+<div id="page-create-cliente" class="col-md-12">
+    <div class="well">
+        <div class="form-horizontal">
+            <fieldset>
+                <legend>Buscar Cliente</legend>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lb-tipo" class="control-label col-md-4">Tipo de Cliente:</label>
+                        <div class="col-md-8">
+                            <p id="lb-tipo" class="form-control-static">jur&iacute;dico</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-dni" class="control-label col-md-4">Dni:</label>
+                        <div class="col-md-8">
+                            <input id="txt-dni" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-nombre" class="control-label col-md-4">Nombre:</label>
+                        <div class="col-md-8">
+                            <input id="txt-nombre" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-time" class="control-label col-md-4">Hora:</label>
+                        <div class="col-md-4">
+                            <div class="input-group bootstrap-timepicker timepicker">
+                                <input id="txt-time" type="text" class="form-control input-small">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-fecha-nacimiento" class="control-label col-md-4">Fecha de nacimiento:</label>
+                        <div class="col-md-4">
+                            <div id="txt-fecha-nacimiento" class="input-group date date-inicio">
+                                <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-edad" class="control-label col-md-4">Edad:</label>
+                        <div class="col-md-4">
+                            <input id="txt-edad" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="txt-dni1" class="control-label col-md-4">Dni:</label>
+                        <div class="col-md-8">
+                            <input id="txt-dni1" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-nombre1" class="control-label col-md-4">Nombre:</label>
+                        <div class="col-md-8">
+                            <input id="txt-nombre1" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cbx-pais" class="control-label col-md-4">Pais:</label>
+                        <div class="col-md-8">
+                            <select id="cbx-pais" class=""></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-fecha-nacimiento1" class="control-label col-md-4">Fecha de nacimiento:</label>
+                        <div class="col-md-4">
+                            <div id="txt-fecha-nacimiento1" class="input-group date date-inicio">
+                                <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-edad1" class="control-label col-md-4">Edad:</label>
+                        <div class="col-md-4">
+                            <input id="txt-edad1" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="pull-right col-md-4">
+                            <button type="button" id="btn-buscar" class="btn btn-default">Buscar</button>
+                            <button type="button" id="btn-limpiar" class="btn btn-default">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <fieldset class="box-buttons">
+        <div class="">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+    </fieldset>
+    <div class="panel panel-default">
+        <div class="panel-heading">Resultados</div>
+        <div class="panel-body">
+            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Salario</th>
+                        <th>FechaNacimiento</th>
+                        <th>Pais</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

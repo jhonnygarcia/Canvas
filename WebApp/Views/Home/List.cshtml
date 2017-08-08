@@ -1,0 +1,62 @@
+﻿@using WebApp.CustomHelpers
+
+@section stylesheet {
+    <link href="@Url.ContentCache("~/Content/bootstrap-treeview.min.css")" rel="stylesheet" type="text/css" />
+}
+@section javascript {
+    <script src="@Url.ContentCache("~/Scripts/bootstrap-treeview.min.js")"></script>
+    <script>
+        $(document).ready(function () {
+            var defaultData = [
+                {
+                    text: 'Parent 1',
+                    href: '#parent1',
+                    tags: ['Detalle', 'Asociar Estudio'],
+                    nodes: [
+                        {
+                            text: 'Child 1',
+                            href: '#child1',
+                            tags: ['Detalle', 'Asociar Asignatura']
+                        },
+                        {
+                            text: 'Child 2',
+                            href: '#child2',
+                            tags: ['Detalle', 'Asociar Asignatura']
+                        }
+                    ]
+                },
+                {
+                    text: 'Parent 2',
+                    href: '#parent2',
+                    tags: ['Detalle', 'Asociar Estudio']
+                }
+            ];
+            $('#treview1').treeview({
+                showBorder: false,
+                showTags: true,
+                levels: 1,
+                data: defaultData
+            });
+        });
+    </script>
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Listado de Ciudades</h4>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="treview1" class="treeview"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-10">
+                    <button type="button" class="btn btn-default">Limpiar</button>
+                    <button type="button" class="btn btn-default">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

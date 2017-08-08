@@ -1,0 +1,104 @@
+﻿@using WebApp.CustomHelpers
+@using WebApp.Globalization.Views
+
+@section javascript {
+    <script src="@Url.ContentNoCache("~/Scripts/Pages/DetailsAccountPeriodo.js")"></script>
+    @Html.RenderGlobalizationMessagesContent(typeof(WebApp.Globalization.Scripts.AccountExtendStrings),
+        typeof(WebApp.Globalization.Scripts.MigrationResultStrings))
+}
+<div id="page-details-account-periodo" class="panel panel-default">
+    <input type="hidden" id="hd-account-id" value="@ViewBag.AccountId" />
+    <input type="hidden" id="hd-parent-id" value="@ViewBag.ParentId" />
+    <div class="panel-heading">
+        <h4 class="title-account">&nbsp;</h4>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal col-md-12">
+            <div>
+                <div class="form-group row col-md-12">
+                    <label for="lb-codigo" class="text-left control-label col-md-3">@AccountPeriodoStrings.LabelSISID:</label>
+                    <div class="col-md-5">
+                        <p id="lb-codigo" class="form-control-static">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <label for="lb-periodo-matriculacion" class="text-left control-label col-md-3">@AccountPeriodoStrings.LabelPeriodoMatriculacion:</label>
+                    <div class="col-md-5">
+                        <p id="lb-periodo-matriculacion" class="form-control-static">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <label for="lb-anio-academico" class="text-left control-label col-md-3">@AccountPeriodoStrings.LabelAnioAcademico:</label>
+                    <div class="col-md-5">
+                        <p id="lb-anio-academico" class="form-control-static">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <label for="lb-inicio-periodo" class="text-left control-label col-md-3">@AccountPeriodoStrings.LabelInicioPeriodo:</label>
+                    <div class="col-md-5">
+                        <p id="lb-inicio-periodo" class="form-control-static">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <label for="lb-fin-periodo" class="text-left control-label col-md-3">@AccountPeriodoStrings.LabelFinPeriodo:</label>
+                    <div class="col-md-5">
+                        <p id="lb-fin-periodo" class="form-control-static">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <div id="tab-master">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab-periodos-no-lectivos" data-toggle="tab">Periodos No Lectivos</a></li>
+                            <li><a href="#tab-cursos" data-toggle="tab">Cursos</a></li>
+                            <li><a href="#tab-migracion" data-toggle="tab">Migraciones</a></li>
+                        </ul>
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane active" id="tab-periodos-no-lectivos">
+                                <br/>
+                                <div class="form-group row col-md-12 table-responsive periodos-no-lectivos">
+                                    <table id="tb-periodo-no-lectivo" class="table">
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <div class="row col-md-6 col-md-offset-3">
+                                    <button type="button" id="btn-verificar-datos" class="btn btn-default">@AccountStrings.BtnVerificarDatos</button>
+                                    <button type="button" id="btn-guardar" class="btn btn-default">@CommonStrings.BtnGuardar</button>
+                                    <button type="button" id="btn-migrar-cursos" class="btn btn-default">@AccountPeriodoStrings.LabelMigrarCursos</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-cursos">
+                                <br/>
+                                <div class="col-md-12">
+                                    <table id="tb-cursos" class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>@CommonStrings.LabelID</th>
+                                            <th>@CommonStrings.LabelNombre</th>
+                                            <th>@CommonStrings.LabelSisId</th>
+                                            <th>@CommonStrings.LabelInicio</th>
+                                            <th>@CommonStrings.LabelFin</th>
+                                            <th>@CommonStrings.LabelTotalEstudiantes</th>
+                                            <th>@CommonStrings.LabelOperacion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-migracion">
+                                <br />
+                                <div class="col-md-12">
+                                    <ul class="list-group pre-scrollable list-migrations" style="max-height: 180px;overflow-y: auto;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row col-md-12">
+                    <button type="button" id="btn-delete-sub-account" class="btn btn-default">@AccountPeriodoStrings.BtnDeleteAccount</button>
+                    <button type="button" id="btn-volver" class="btn btn-default">@CommonStrings.BtnVolver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿/*jquery.bootstrap-touchspin.min.js*/
+div.bootstrap-touchspin input[type="text"] {
+    border-radius: 4px !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+div.jquick-container.jquick-container-single {
+    margin-top: 3px;
+}
+.box-agrupador{
+    margin-top: 8px;
+    padding: 8px 8px 0 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+}
+.box-agrupador .titulo-agrupador {
+    background-color: #fff;
+    position: absolute;
+    top: -12px;
+    left: 15px;
+}
+
+body {
+  min-height: 75rem;
+  padding-top: 6.5rem;
+}
